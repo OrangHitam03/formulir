@@ -1,0 +1,71 @@
+<script>
+    function checkF1lesize(input){
+        var maxSize = 2 * 1024 * 1024;
+        if (input.files[0].size > maxSize){
+            alert("ukuran file telalu besar, max 2MB.");
+            input.value ="";
+        }
+    }
+</script>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Pendaftaran lomba volly RT Dan RW</title>
+ <form method="POST" action="prosess.php" onsubmit="return validasiForm()">
+</head>
+<body>
+    <center>
+        <fieldset> 
+        <h1>FORMULIR PRNDAFTARAN LOMBA VOLLY RT DAN RW</h1>
+                <Table>
+                <tr>
+                    <td>Nama lengkap<br></td>
+                    <td>:</td>
+                    <td><input type="text" name="nama" id="natim" placeholder="nama lengkap" oninput="this.value = this.value.replace(/[^a-zA-Z]+/g, '')" required><br></td>
+                </tr>
+                <tr>
+                    <td>jumlah anggota<br></td>
+                    <td>:</td>
+                    <td><input type="number" name="Jumlah" placeholder="jumlah anggota"required ><br></td>
+                </tr>
+                <tr>
+                    <td>nama ketua tim<br></td>
+                    <td>:</td>
+                    <td><input type="text" name="namket" id="nket" placeholder="nama ketua tim" required><br></td>
+                </tr>
+                <tr>
+                    <td>nomor hp tim<br></td>
+                    <td>:</td>
+                    <td><input type="text" name="nomor" id="nohp" placeholder="nomor hp tim" oninput="this.value = this.value.replace(/[^0-9]/g, '')" maxlength="11" required><br></td>
+                </tr>
+                <tr>
+                    <td>asal<br></td>
+                    <td>:</td>
+                    <td>RT<input type="number" name="rt" required> RW<input type="number" name="rw" required><br></td>
+                </tr>
+                <tr>
+                    <td>foto KTP ketua anggota<br></td>
+                    <td>:</td>
+                    <td><input type="file" name="ktp" onchange="checkF1lesize(this)" required><br></td>
+                </tr>
+                
+                <tr>
+                    <td>tanggal Pendaftaran<br></td>
+                    <td>:</td>
+                    <td><input type="date" name="tanggal" required></td>
+                </tr> 
+                <tr>
+                    <td>Tim</td>
+                    <td>:</td>
+                    <td><input type="radio" name="tim" value="putra" required>putra<input type="radio" name="tim" value="putri" required>putri</td>
+                </tr> 
+                <tr>
+                <td><input type="submit" name="submit"></td>
+                </tr>
+                </Table>
+        </fieldset>
+    </center>
+</form>
+</body>
+
+</html>
